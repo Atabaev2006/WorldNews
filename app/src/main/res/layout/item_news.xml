@@ -27,7 +27,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/about"
+                android:id="@+id/tv_about"
                 android:padding="5dp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"/>
 
             <TextView
-                android:id="@+id/secondabout"
+                android:id="@+id/tv_secondabout"
                 android:layout_width="match_parent"
                 android:layout_height="71dp"
                 android:gravity="bottom"
@@ -58,7 +58,7 @@
 
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/tv_name"
         android:padding="5dp"
         android:textStyle="bold"
         android:textColor="@color/black"
@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:id="@+id/time"
+        android:id="@+id/tv_time"
         android:padding="5dp"
         android:textStyle="bold"
         android:textColor="@color/black"
