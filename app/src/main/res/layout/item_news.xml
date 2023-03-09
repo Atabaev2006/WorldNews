@@ -4,83 +4,94 @@
     android:orientation="vertical"
     android:layout_height="match_parent">
 
-
     <LinearLayout
-        android:padding="8dp"
-        android:orientation="horizontal"
+        android:id="@+id/b_item"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_width="140dp"
-            android:layout_height="120dp"
-            android:src="@color/black" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
 
 
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_news"
+                android:layout_width="140dp"
+                android:layout_height="120dp"
+                android:src="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_about"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:text="About"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tv_secondabout"
+                    android:layout_width="match_parent"
+                    android:layout_height="71dp"
+                    android:gravity="bottom"
+                    android:padding="8dp"
+                    android:text="SecondAbout"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
             <TextView
-                android:id="@+id/tv_about"
+                android:id="@+id/tv_name"
                 android:padding="5dp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="25sp"
-                android:text="About"
+                android:text="Name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
-                android:id="@+id/tv_secondabout"
-                android:layout_width="match_parent"
-                android:layout_height="71dp"
-                android:gravity="bottom"
-                android:padding="8dp"
-                android:text="SecondAbout"
+                android:id="@+id/tv_time"
+                android:padding="5dp"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="25sp"
-                android:textStyle="bold" />
+                android:text="Time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+
 
         </LinearLayout>
-
     </LinearLayout>
 
-<LinearLayout
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
 
 
-    <TextView
-        android:id="@+id/tv_name"
-        android:padding="5dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:text="Name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:id="@+id/tv_time"
-        android:padding="5dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:text="Time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-
-
-
-</LinearLayout>
 
 
 </LinearLayout>

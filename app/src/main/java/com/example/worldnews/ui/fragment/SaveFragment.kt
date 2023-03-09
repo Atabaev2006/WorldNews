@@ -7,21 +7,26 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.worldnews.R
 import com.example.worldnews.databinding.FragmentSaveBinding
+import com.example.worldnews.utils.viewBinding
 
 
-class SaveFragment : Fragment() {
-     lateinit var binding: FragmentSaveBinding
+class SaveFragment : Fragment(R.layout.fragment_save) {
+   private val binding by viewBinding { FragmentSaveBinding.bind(it) }
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_save,container,false)
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding=FragmentSaveBinding.inflate(layoutInflater)
         super.onViewCreated(view, savedInstanceState)
-        setupUI()
+        setupUi()
+
     }
 
-    private fun setupUI() {
-        binding.apply {
+    private fun setupUi() {
 
-        }
     }
-
 
 }
