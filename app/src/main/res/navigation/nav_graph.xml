@@ -13,6 +13,15 @@
         <action
             android:id="@+id/action_homeFragment_to_saveFragment2"
             app:destination="@id/saveFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment2"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment3"
+            app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/saveFragment"
@@ -28,4 +37,9 @@
         android:name="com.example.worldnews.ui.fragment.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.worldnews.ui.fragment.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
 </navigation>

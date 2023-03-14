@@ -5,13 +5,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebViewClient
+import android.widget.Toast
 import com.example.worldnews.R
+import com.example.worldnews.data.local.NewsRepository
 import com.example.worldnews.databinding.FragmentDetailBinding
+import com.example.worldnews.model.news.Article
 import com.example.worldnews.utils.viewBinding
+import com.google.gson.Gson
 
 
 class DetailFragment : Fragment(R.layout.fragment_detail) {
+
+    lateinit var repository: NewsRepository
     private val binding by viewBinding { FragmentDetailBinding.bind(it) }
+    private val gson = Gson()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,11 +31,27 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-         setuiUI()
+        setupUI()
+        val article = gson.fromJson(requireArguments().getString("article", ""), Article::class.java)
+        Toast.makeText(requireContext(), article.description, Toast.LENGTH_SHORT).show()
+
+        binding.wbView.apply {
+            webViewClient = WebViewClient()
+            loadUrl(article.url)
+        }
+    }
+
+    private fun setupUI() {
+        repository= NewsRepository(requireActivity().application)
+      binding.apply {
+          fbSave.setOnClickListener {
+              
+          }
+
+
+      }
 
     }
 
-    private fun setuiUI() {
 
-    }
 }

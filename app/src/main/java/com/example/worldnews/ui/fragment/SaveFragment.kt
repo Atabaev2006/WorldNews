@@ -11,6 +11,7 @@ import com.example.worldnews.utils.viewBinding
 
 
 class SaveFragment : Fragment(R.layout.fragment_save) {
+    lateinit var repository: SaveFragment
    private val binding by viewBinding { FragmentSaveBinding.bind(it) }
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,7 +27,9 @@ class SaveFragment : Fragment(R.layout.fragment_save) {
     }
 
     private fun setupUi() {
+    repository= SaveFragment()
+    binding.apply {
 
-    }
+}    }
 
 }
