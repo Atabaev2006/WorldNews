@@ -1,21 +1,17 @@
 package com.example.worldnews.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
-import android.webkit.WebViewClient
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.worldnews.R
 import com.example.worldnews.model.news.Article
-import com.example.worldnews.ui.fragment.DetailFragment
-import com.example.worldnews.ui.fragment.SaveFragment
+
 
 class NewsAdapter(val list: ArrayList<Article>) :
     RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
@@ -44,9 +40,9 @@ class NewsAdapter(val list: ArrayList<Article>) :
         val article = list[position]
         if (holder is NewsViewHolder) {
             holder.apply {
-                tv_about.text = article.content.toString()
-                tv_secondabout.text = article.description.toString()
-                tv_name.text = article.author.toString()
+                tv_about.text = article.content
+                tv_secondabout.text = article.description
+                tv_name.text = article.author
                 tv_time.text = article.publishedAt
                 Glide.with(iv_news).load(article.urlToImage).into(iv_news)
                 tv_about.text = article.title

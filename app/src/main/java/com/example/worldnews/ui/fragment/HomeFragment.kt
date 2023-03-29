@@ -49,7 +49,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         getNews()
         binding.apply {
             adapter = NewsAdapter(list)
-            adapter.shareClick ={ article ->
+            adapter.shareClick = { article ->
                 findNavController().navigate(R.id.detailFragment, bundleOf(
                     "article" to Gson().toJson(article)
                 ))

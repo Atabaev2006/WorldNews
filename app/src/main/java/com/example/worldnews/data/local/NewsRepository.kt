@@ -2,7 +2,7 @@ package com.example.worldnews.data.local
 
 import android.app.Application
 import com.example.worldnews.model.news.Article
-import com.example.worldnews.model.news.New
+import com.example.worldnews.ui.fragment.SaveFragment
 
 class NewsRepository {
     lateinit var newsDao: NewsDao
@@ -19,7 +19,7 @@ class NewsRepository {
     fun getAllNews():List<Article>{
         return newsDao.getNews()
     }
-    fun deleteNews(id:Long){
+    fun deleteNews(id:Int){
         newsDao.deleteNews(id)
     }
     fun deleteNews2(article: Article){
@@ -27,5 +27,9 @@ class NewsRepository {
     }
     fun clearNews(){
         newsDao.clearNews()
+    }
+
+    fun saveNews() {
+        TODO("Not yet implemented")
     }
 }

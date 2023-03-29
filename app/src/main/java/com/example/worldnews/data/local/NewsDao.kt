@@ -13,8 +13,8 @@ interface NewsDao {
     @Query("SELECT * FROM news")
     fun getNews():List<Article>
 
-    @Query("SELECT FROM user WHERE id =:id")
-    fun deleteNews(id:Long)
+    @Query("DELETE FROM news WHERE id =:id")
+    fun deleteNews(id:Int)
 
     @Query("DELETE FROM news")
     fun clearNews()
