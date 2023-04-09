@@ -27,8 +27,8 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
-    private val binding by viewBinding { FragmentHomeBinding.bind(it) }
+class HomeFragment : Fragment() {
+    private lateinit var binding: FragmentHomeBinding
     var list = ArrayList<Article>()
     lateinit var adapter: NewsAdapter
     override fun onCreateView(
@@ -41,6 +41,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding = FragmentHomeBinding.bind(view)
         initView()
     }
 

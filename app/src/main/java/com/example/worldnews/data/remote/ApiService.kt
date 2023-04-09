@@ -1,5 +1,6 @@
 package com.example.worldnews.data.remote
 
+import com.example.worldnews.model.news.Article
 import com.example.worldnews.model.news.New
 import retrofit2.Call
 import retrofit2.http.GET

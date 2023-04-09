@@ -23,6 +23,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
     lateinit var repository: NewsRepository
     private val binding by viewBinding { FragmentDetailBinding.bind(it) }
     private val gson = Gson()
+    lateinit var article:Article
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
@@ -30,7 +31,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val article = gson.fromJson(requireArguments().getString("article", ""), Article::class.java)
+         article = gson.fromJson(requireArguments().getString("article", ""), Article::class.java)
         Toast.makeText(requireContext(), article.description, Toast.LENGTH_SHORT).show()
         binding.wbView.apply {
             webViewClient = WebViewClient()
@@ -43,7 +44,6 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         binding.apply {
             fbSave.setOnClickListener {
                 Toast.makeText(requireContext(), "did you save that", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(R.id.saveFragment)
                 repository.saveNews(article)
             }
         }
