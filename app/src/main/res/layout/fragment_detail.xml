@@ -14,12 +14,30 @@
         android:layout_height="match_parent"/>
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/fb_save"-->
+<!--        android:src=""-->
+<!--        android:layout_margin="16dp"-->
+<!--        android:layout_gravity="bottom|end"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"/>-->
+
+    <ImageView
         android:id="@+id/fb_save"
-        android:src="@drawable/ic_save"
         android:layout_margin="16dp"
         android:layout_gravity="bottom|end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:src="@drawable/this_for_save"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/ic_back"
+        android:layout_marginTop="30dp"
+        android:layout_width="50dp"
+        android:layout_height="38dp"/>
+
+
 
 </FrameLayout>

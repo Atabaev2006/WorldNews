@@ -38,7 +38,9 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
             loadUrl(article.url)
         }
         setupUI(article)
+        forBack()
     }
+
     private fun setupUI(article: Article) {
         repository = NewsRepository(requireActivity().application)
         binding.apply {
@@ -47,6 +49,12 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
                 repository.saveNews(article)
             }
         }
-
+    }
+    private fun forBack() {
+     binding.apply {
+         ivBack.setOnClickListener {
+             findNavController().navigate(R.id.action_detailFragment_to_homeFragment)
+         }
+     }
     }
 }

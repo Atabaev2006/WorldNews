@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -15,6 +16,7 @@ import com.example.worldnews.databinding.FragmentSaveBinding
 import com.example.worldnews.model.news.Article
 import com.example.worldnews.model.news.New
 import com.example.worldnews.utils.viewBinding
+import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -36,9 +38,20 @@ class SaveFragment : Fragment(R.layout.fragment_save) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupUi()
+        forWebVie()
 
     }
 
+    private fun forWebVie() {
+        binding.apply {
+            adapter = SaveAdapter(list)
+            adapter.shareClick = {article ->
+                findNavController().navigate(R.id.detailFragment, bundleOf(
+                    "article" to Gson().toJson(article)
+                ))
+            }
+        }
+    }
 
 
     private fun setupUi() {
@@ -60,8 +73,8 @@ class SaveFragment : Fragment(R.layout.fragment_save) {
         }
     }
 
-    private fun loadNews(url: String) {
-    }
+   private fun loadNews(url: String) {
+   }
 }
 
 
