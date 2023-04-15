@@ -23,7 +23,7 @@
           android:layout_width="match_parent"
           android:layout_height="80dp">
 
-<!-- @verve_code -->
+
           <EditText
               android:id="@+id/et_search"
               android:drawableStart="@drawable/ic_search"
