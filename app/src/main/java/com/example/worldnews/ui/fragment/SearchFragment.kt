@@ -26,6 +26,7 @@ import com.example.worldnews.model.news.Everything
 import com.example.worldnews.model.news.New
 import com.example.worldnews.utils.viewBinding
 import com.google.android.material.internal.ViewUtils.hideKeyboard
+import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -47,9 +48,28 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupUi(view)
+//        forSearchWeb()
 
     }
 
+    private fun hideProgress() {
+        binding.progressBarForSearch.visibility  = View.GONE
+    }
+
+    private fun showProgress() {
+        binding.progressBarForSearch.visibility = View.VISIBLE
+    }
+
+
+//    private fun forSearchWeb() {
+//        binding.apply {
+//            adapter = SearchAdapter(list)
+//            adapter.shareClick = {articleX ->
+//                findNavController().navigate(R.id.detailFragment, bundleOf())
+//                "article" to Gson().toJson(articleX)
+//            }
+//        }
+//    }
 
 
     private fun setupUi(view: View) {
@@ -71,15 +91,18 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
                  bundle.putString("id", it.toString())
                  bundle.putString("main", "search")
                  findNavController().navigate(R.id.action_searchFragment_to_detailFragment)
+
              }
        }
     }
     private fun everything(q: String) {
+        showProgress()
        ApiClient.apiService.getAllNews(q).enqueue(object :Callback<Everything>{
            override fun onResponse(call: Call<Everything>, response: Response<Everything>) {
                if (response.isSuccessful){
                    list = response.body()!!.articles
                    adapter.submitList(list)
+                   hideProgress()
                }
 
 
